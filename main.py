@@ -1,8 +1,6 @@
-from fastapi import FastAPI
+import uvicorn
 
-app = FastAPI()
+from config import CONFIG
 
-
-@app.get("/")
-async def index():
-    return "Hello from Blog"
+if __name__ == "__main__":
+    uvicorn.run("app:app", host=CONFIG.HOST, port=CONFIG.PORT, reload=True)
