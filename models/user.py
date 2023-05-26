@@ -17,10 +17,6 @@ class UserAuth(BaseModel):
             raise ValueError('"email" was not provided to the model')
         elif values.get("email") == "":
             raise ValueError('empty email was not provided to the model')
-        if "password" not in values:
-            raise ValueError('"password" was not provided to the model')
-        elif values.get("password") == "":
-            raise ValueError('empty password was not provided to the model')
         return values
 
     class Config:
